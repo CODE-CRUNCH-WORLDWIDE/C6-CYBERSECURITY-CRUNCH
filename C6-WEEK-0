@@ -1,0 +1,133 @@
+# Course Content
+
+## Topic: Programming Basics
+- **Week Dates:** January 6, 2025 - January 10, 2025
+- **Unit:** Week 1 - Overview of Programming Languages
+- **Link to Slides:** [Programming Basics Slides](https://example.com/slides)
+
+---
+
+### **Sample Code: Java**
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, Java!");
+    }
+}
+```
+
+---
+
+### **Sample Code: C**
+```c
+#include <stdio.h>
+
+int main() {
+    printf("Hello, C!\n");
+    return 0;
+}
+```
+
+---
+
+### **Sample Code: Python**
+```python
+# Python Hello World
+print("Hello, Python!")
+```
+
+---
+
+### **Sample Code: CSS**
+```css
+/* CSS Sample */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1 {
+    color: #007BFF;
+}
+```
+
+---
+
+### **Sample Code: JavaScript**
+```javascript
+// JavaScript Hello World
+console.log("Hello, JavaScript!");
+```
+
+---
+
+### **Sample Code: HTML**
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello HTML</title>
+</head>
+<body>
+    <h1>Hello, HTML!</h1>
+</body>
+</html>
+```
+
+---
+
+### **Sample Code: React**
+```javascript
+import React from 'react';
+
+function App() {
+    return (
+        <div>
+            <h1>Hello, React!</h1>
+        </div>
+    );
+}
+
+export default App;
+```
+
+---
+
+### **Commands: Terminal**
+```bash
+# List files in the current directory
+ls
+
+# Change directory
+cd /path/to/directory
+
+# Create a new directory
+mkdir new_directory
+
+# Remove a file
+rm file_name.txt
+
+# Check current working directory
+pwd
+
+# Print content of a file
+cat file_name.txt
+
+# Display disk space usage
+df -h
+```
+
+---
+
+## Other Resources:
+- [Java Documentation](https://docs.oracle.com/javase/8/docs/)
+- [C Programming Reference](https://en.cppreference.com/w/c)
+- [Python Documentation](https://docs.python.org/3/)
+- [CSS Reference](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [HTML Documentation](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [React Documentation](https://reactjs.org/docs/getting-started.html)
+- [Linux Terminal Commands Cheat Sheet](https://www.guru99.com/linux-commands-cheat-sheet.html)
