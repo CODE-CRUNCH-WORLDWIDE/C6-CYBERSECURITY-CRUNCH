@@ -1,10 +1,10 @@
 # Week 1
 
-## Topics: Introductions
-- **Week Dates:** January 6, 2025 - January 10, 2025
+## Topics: Introduction To Cybersecurity
+- **Week Dates:** January 13, 2025 - January 17, 2025
 - **Units:** 
-    - Unit 1 - Introduction to AI & Data Science
+    - Unit 1 - Introduction to Cybersecurity
 - **Link to content:**
-    - [Introduction to AI & Data Science](https://docs.google.com/presentation/d/1nMkPlKGX7c2DJWsqy2pP54852hhvljN7/edit#slide=id.g321e7708c67_1_83)
+    - [Introduction to Cybersecurity](https://docs.google.com/presentation/d/193t_7KGJrEm15T_PkNxTUP0IuMuyIcqQ/edit#slide=id.g311fd835375_0_498)
 
 ---
