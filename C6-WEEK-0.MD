@@ -2,7 +2,7 @@
 
 ## Topic: Programming Basics
 - **Week Dates:** January 6, 2025 - January 10, 2025
-- **Unit:** Week 0 - Overview of C6 and Try Hack me
+- **Unit:** Week 0 - Overview of C6 and TryHackme
 - **Link to Slides:** [Programming Basics Slides](https://docs.google.com/presentation/d/1CV_feTceU6hOqWQ7kt1_1-fCR1wgHZ-I/edit?usp=sharing&ouid=107960321799476780456&rtpof=true&sd=true)
 
 ---
