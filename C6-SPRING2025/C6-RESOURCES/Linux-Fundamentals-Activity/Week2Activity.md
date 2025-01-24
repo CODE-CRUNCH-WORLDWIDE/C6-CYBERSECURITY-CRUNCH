@@ -8,9 +8,8 @@ This guide explains how to set up and use Visual Studio Code (VS Code) to intera
 
 Before you begin, ensure you have the following installed on your computer:
 
-1. [Git](https://git-scm.com/) - For cloning the repository (optional).
-2. [Visual Studio Code (VS Code)](https://code.visualstudio.com/) - A lightweight code editor with built-in terminal support.
-3. **Bash Terminal**:
+1. [Visual Studio Code (VS Code)](https://code.visualstudio.com/) - A lightweight code editor with built-in terminal support.
+2. **Bash Terminal**:
    - For Linux/Mac: Use the built-in terminal.
    - For Windows: Use [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) or Git Bash (included with Git).
 
@@ -18,24 +17,10 @@ Before you begin, ensure you have the following installed on your computer:
 
 ## Steps to Use VS Code with the Files
 
-### 1. Clone or Download the Repository
+### 1. Download the Replit File
 
-#### Option 1: Clone the Repository (Recommended)
-1. Open your terminal.
-2. Run the following command:
-   ```bash
-   git clone <repository-url>
-   ```
-   Replace `<repository-url>` with the URL of this repository (e.g., `https://github.com/username/repository-name.git`).
-3. Navigate into the cloned folder:
-   ```bash
-   cd repository-name
-   ```
-
-#### Option 2: Download as a ZIP File
-1. Go to the [repository's page](<repository-url>).
-2. Click the green **Code** button and select **Download ZIP**.
-3. Extract the ZIP file to a folder on your computer.
+1. Download the Replit file provided during the workshop.
+2. Extract the contents of the file to a folder on your computer.
 
 ---
 
@@ -43,7 +28,7 @@ Before you begin, ensure you have the following installed on your computer:
 
 1. Open **Visual Studio Code**.
 2. Click **File > Open Folder**.
-3. Navigate to the folder where you cloned or extracted the repository and select it.
+3. Navigate to the folder where you extracted the Replit file and select it.
 4. The file explorer in VS Code will display the folder structure.
 
 ---
@@ -51,7 +36,7 @@ Before you begin, ensure you have the following installed on your computer:
 ### 3. Open the Built-in Terminal
 
 1. Open the terminal in VS Code by clicking **Terminal > New Terminal** or pressing `Ctrl + `` (backtick key).
-2. Ensure you're in the correct folder (the root of the repository):
+2. Ensure you're in the correct folder (the root of the extracted Replit files):
    ```bash
    pwd
    ```
