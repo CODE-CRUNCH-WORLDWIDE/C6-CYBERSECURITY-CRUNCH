@@ -1,0 +1,86 @@
+{
+  "schema": "ccw-ioc-v1 (STIX-flavoured)",
+  "incident_id": "IR-2026-014",
+  "exported_at": "<YYYY-MM-DDTHH:MM:SSZ>",
+  "exported_by": "<your-name>",
+  "iocs": [
+    {
+      "id": "ioc-001",
+      "type": "ipv4-addr",
+      "value": "198.51.100.7",
+      "first_seen": "<YYYY-MM-DDTHH:MM:SSZ>",
+      "last_seen": "<YYYY-MM-DDTHH:MM:SSZ>",
+      "confidence": "high",
+      "sharing_tlp": "GREEN",
+      "notes": "Attacker source IP; both for HTTP recon (nginx access.log) and SSH foothold (auth.log). Same IP appears as exfiltration destination on port 8443."
+    },
+    {
+      "id": "ioc-002",
+      "type": "file",
+      "value": "/tmp/.x",
+      "sha256": "<64-character hex>",
+      "size_bytes": 4214232,
+      "first_seen": "<YYYY-MM-DDTHH:MM:SSZ>",
+      "last_seen": "<YYYY-MM-DDTHH:MM:SSZ>",
+      "confidence": "high",
+      "sharing_tlp": "GREEN",
+      "notes": "Dropped attacker payload. Set immutable (chattr +i) after install."
+    },
+    {
+      "id": "ioc-003",
+      "type": "user-account",
+      "value": "support",
+      "uid": 1099,
+      "first_seen": "<YYYY-MM-DDTHH:MM:SSZ>",
+      "confidence": "high",
+      "sharing_tlp": "AMBER",
+      "notes": "Persistence account created post-foothold. Username is intentionally innocuous; the UID range is the giveaway."
+    },
+    {
+      "id": "ioc-004",
+      "type": "cron-entry",
+      "value": "*/5 * * * * /tmp/.x",
+      "cron_user": "support",
+      "first_seen": "<YYYY-MM-DDTHH:MM:SSZ>",
+      "confidence": "high",
+      "sharing_tlp": "AMBER",
+      "notes": "Persistence via cron under the support user, fragmenting the forensic trail."
+    },
+    {
+      "id": "ioc-005",
+      "type": "url",
+      "value": "https://198.51.100.7:8443/",
+      "first_seen": "<YYYY-MM-DDTHH:MM:SSZ>",
+      "last_seen": "<YYYY-MM-DDTHH:MM:SSZ>",
+      "confidence": "high",
+      "sharing_tlp": "GREEN",
+      "notes": "Exfiltration destination. Same IP as the attacker source; non-standard port 8443."
+    },
+    {
+      "id": "ioc-006",
+      "type": "user-agent",
+      "value": "Mozilla/5.0 zgrab/0.x",
+      "first_seen": "<YYYY-MM-DDTHH:MM:SSZ>",
+      "last_seen": "<YYYY-MM-DDTHH:MM:SSZ>",
+      "confidence": "medium",
+      "sharing_tlp": "GREEN",
+      "notes": "zgrab is a legitimate scanner; the IP correlation is what makes this a high-signal IOC."
+    },
+    {
+      "id": "ioc-007",
+      "type": "behaviour",
+      "value": "post-sudo wget-to-/tmp followed by chmod+x and immediate execute",
+      "confidence": "medium",
+      "sharing_tlp": "WHITE",
+      "notes": "The canonical post-foothold payload-drop sequence. Useful for cross-organisation pattern matching."
+    },
+    {
+      "id": "ioc-008",
+      "type": "behaviour",
+      "value": "history -c followed by rm ~/.bash_history followed by exit, within 10 seconds",
+      "confidence": "medium",
+      "sharing_tlp": "WHITE",
+      "notes": "Defence-evasion sequence (MITRE ATT&CK T1070.003). The timing tells you the attacker is operating from a script, not interactively."
+    }
+  ]
+}

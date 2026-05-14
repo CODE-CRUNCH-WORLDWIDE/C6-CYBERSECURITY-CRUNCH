@@ -1,0 +1,46 @@
+May 14 01:00:11 web-prod-02 systemd-logind[742]: New session 31 of user deploy.
+May 14 01:00:11 web-prod-02 sshd[7811]: Accepted publickey for deploy from 192.168.42.10 port 41522 ssh2: RSA SHA256:K2C/lOQ4...
+May 14 01:00:11 web-prod-02 sshd[7811]: pam_unix(sshd:session): session opened for user deploy(uid=1003) by (uid=0)
+May 14 01:00:34 web-prod-02 sudo:   deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/local/bin/deploy-release v2.7.4
+May 14 01:00:34 web-prod-02 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by deploy(uid=1003)
+May 14 01:00:51 web-prod-02 sudo: pam_unix(sudo:session): session closed for user root
+May 14 01:00:53 web-prod-02 sshd[7811]: pam_unix(sshd:session): session closed for user deploy
+May 14 02:45:32 web-prod-02 sshd[8401]: Failed password for invalid user admin from 198.51.100.7 port 58112 ssh2
+May 14 02:45:33 web-prod-02 sshd[8401]: Connection closed by invalid user admin 198.51.100.7 port 58112 [preauth]
+May 14 02:45:36 web-prod-02 sshd[8403]: Failed password for invalid user root from 198.51.100.7 port 58114 ssh2
+May 14 02:45:36 web-prod-02 sshd[8403]: Connection closed by invalid user root 198.51.100.7 port 58114 [preauth]
+May 14 02:45:40 web-prod-02 sshd[8405]: Failed password for invalid user oracle from 198.51.100.7 port 58118 ssh2
+May 14 02:45:43 web-prod-02 sshd[8407]: Failed password for invalid user postgres from 198.51.100.7 port 58122 ssh2
+May 14 02:45:46 web-prod-02 sshd[8409]: Failed password for invalid user ubuntu from 198.51.100.7 port 58126 ssh2
+May 14 02:45:49 web-prod-02 sshd[8411]: Failed password for invalid user user from 198.51.100.7 port 58130 ssh2
+May 14 02:45:52 web-prod-02 sshd[8413]: Failed password for invalid user test from 198.51.100.7 port 58134 ssh2
+May 14 02:45:55 web-prod-02 sshd[8415]: Failed password for invalid user git from 198.51.100.7 port 58138 ssh2
+May 14 02:45:58 web-prod-02 sshd[8417]: Failed password for invalid user www-data from 198.51.100.7 port 58142 ssh2
+May 14 02:46:01 web-prod-02 sshd[8419]: Failed password for invalid user pi from 198.51.100.7 port 58146 ssh2
+May 14 02:46:04 web-prod-02 sshd[8420]: Failed password for invalid user centos from 198.51.100.7 port 58150 ssh2
+May 14 02:46:07 web-prod-02 sshd[8422]: Failed password for invalid user devops from 198.51.100.7 port 58154 ssh2
+May 14 02:46:11 web-prod-02 sshd[8424]: Failed password for invalid user node from 198.51.100.7 port 58158 ssh2
+May 14 02:46:14 web-prod-02 sshd[8426]: Failed password for invalid user docker from 198.51.100.7 port 58162 ssh2
+May 14 02:46:21 web-prod-02 sshd[8428]: Failed password for invalid user kubernetes from 198.51.100.7 port 58168 ssh2
+May 14 02:46:58 web-prod-02 sshd[8430]: Accepted publickey for deploy from 198.51.100.7 port 58180 ssh2: RSA SHA256:K2C/lOQ4...
+May 14 02:47:11 web-prod-02 sshd[8430]: pam_unix(sshd:session): session opened for user deploy(uid=1003) by (uid=0)
+May 14 02:47:11 web-prod-02 systemd-logind[742]: New session 32 of user deploy.
+May 14 02:47:32 web-prod-02 sudo:   deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/bin/bash
+May 14 02:47:32 web-prod-02 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by deploy(uid=1003)
+May 14 02:48:02 web-prod-02 useradd[8520]: new user: name=support, UID=1099, GID=1099, home=/home/support, shell=/bin/bash
+May 14 02:48:02 web-prod-02 useradd[8520]: add 'support' to group 'support'
+May 14 02:48:14 web-prod-02 passwd[8531]: pam_unix(passwd:chauthtok): password changed for support
+May 14 02:48:33 web-prod-02 crontab[8540]: (root) LIST (support)
+May 14 02:48:33 web-prod-02 crontab[8541]: (root) REPLACE (support)
+May 14 02:49:01 web-prod-02 sudo:   root : TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/chattr +i /tmp/.x
+May 14 02:49:15 web-prod-02 sudo:   root : TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/bin/cat /etc/shadow
+May 14 02:49:22 web-prod-02 sudo:   root : TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/bin/tar czf /tmp/d.tar.gz /home/customers/
+May 14 02:50:05 web-prod-02 sudo: pam_unix(sudo:session): session closed for user root
+May 14 02:50:07 web-prod-02 sshd[8430]: pam_unix(sshd:session): session closed for user deploy
+May 14 02:50:07 web-prod-02 systemd-logind[742]: Removed session 32.
+May 14 02:55:01 web-prod-02 CRON[8612]: pam_unix(cron:session): session opened for user support(uid=1099) by (uid=0)
+May 14 02:55:01 web-prod-02 CRON[8612]: (support) CMD (/tmp/.x)
+May 14 02:55:02 web-prod-02 CRON[8612]: pam_unix(cron:session): session closed for user support
+May 14 03:00:01 web-prod-02 CRON[8642]: pam_unix(cron:session): session opened for user support(uid=1099) by (uid=0)
+May 14 03:00:01 web-prod-02 CRON[8642]: (support) CMD (/tmp/.x)
+May 14 03:00:02 web-prod-02 CRON[8642]: pam_unix(cron:session): session closed for user support

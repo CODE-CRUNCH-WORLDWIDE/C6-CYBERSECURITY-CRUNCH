@@ -1,0 +1,48 @@
+# Output of: find / -xdev -type f -mtime -7 -printf '%T+ %p\n' 2>/dev/null
+# Acquired 2026-05-14T02:56:00Z by IR responder.
+# Filesystem mounts: / on /dev/vda1 (ext4, rw,relatime).
+2026-05-13+22:01:11.0000000000 /etc/passwd
+2026-05-13+22:01:11.0000000000 /etc/shadow
+2026-05-13+22:01:11.0000000000 /etc/group
+2026-05-13+22:01:11.0000000000 /etc/gshadow
+2026-05-13+22:01:11.0000000000 /etc/subuid
+2026-05-13+22:01:11.0000000000 /etc/subgid
+2026-05-13+22:30:00.0000000000 /var/log/dpkg.log
+2026-05-14+01:00:11.0000000000 /var/log/auth.log
+2026-05-14+01:00:11.0000000000 /var/log/wtmp
+2026-05-14+01:00:21.0000000000 /var/log/nginx/access.log
+2026-05-14+02:46:36.0000000000 /var/cache/nginx/client_temp/0000000114
+2026-05-14+02:46:55.0000000000 /var/cache/nginx/client_temp/0000000115
+2026-05-14+02:47:35.0000000000 /tmp/x
+2026-05-14+02:47:36.0000000000 /tmp/.x
+2026-05-14+02:48:02.0000000000 /home/support/.bashrc
+2026-05-14+02:48:02.0000000000 /home/support/.profile
+2026-05-14+02:48:02.0000000000 /home/support/.bash_logout
+2026-05-14+02:48:14.0000000000 /etc/shadow
+2026-05-14+02:48:14.0000000000 /etc/passwd
+2026-05-14+02:48:14.0000000000 /etc/group
+2026-05-14+02:48:33.0000000000 /var/spool/cron/crontabs/support
+2026-05-14+02:49:15.0000000000 /tmp/sh.out
+2026-05-14+02:49:22.0000000000 /tmp/d.tar.gz
+2026-05-14+02:49:55.0000000000 /tmp
+2026-05-14+02:50:03.0000000000 /home/deploy
+2026-05-14+02:55:01.0000000000 /var/spool/cron/crontabs/.support.swp
+2026-05-14+02:55:02.0000000000 /var/log/syslog
+2026-05-14+02:55:02.0000000000 /var/log/auth.log
+# NOTE from IR responder:
+# /tmp/.x has ctime > mtime at acquisition (mtime 2026-05-14+02:47:36;
+# ctime 2026-05-14+02:49:01 — the chattr +i call updated ctime but not
+# mtime). The ctime is the more reliable timestamp for "when the file
+# was touched"; the mtime can be backdated, the ctime cannot easily.
+# See Lecture 2 section 5.1 for the canonical caveat.
+#
+# /tmp itself has mtime 2026-05-14+02:49:55 — when the attacker's `rm`
+# removed sh.out and d.tar.gz, the directory's mtime updated. That
+# directory mtime is itself an indicator that something was removed
+# from /tmp around that time, even though we cannot recover the names.
+#
+# /tmp/sh.out and /tmp/d.tar.gz appear in the listing despite being
+# rm'd. find walks the directory entries; the entries here are from
+# the unlinked-but-not-yet-overwritten inodes. ext4 has not yet
+# reclaimed the blocks. A debugfs walk could recover content; an
+# extundelete run as well. Both are stretch goals.
