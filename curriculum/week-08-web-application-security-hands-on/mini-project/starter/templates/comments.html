@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}vuln_lab - comments{% endblock %}
+{% block body %}
+<h1>Comments</h1>
+<form method="post">
+  <p><label>Body <input name="body" type="text" size="50"></label>
+     <button type="submit">Post</button></p>
+</form>
+<ul>
+  {# Vulnerability (A03, CWE-79 stored): |safe disables autoescape. #}
+  {% for row in rows %}
+    <li>{{ row.body | safe }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}

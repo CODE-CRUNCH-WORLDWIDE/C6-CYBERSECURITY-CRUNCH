@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{% block title %}vuln_lab{% endblock %}</title>
+<style>
+  body { font-family: sans-serif; max-width: 720px; margin: 2em auto; line-height: 1.5; }
+  nav a { margin-right: 1em; }
+  pre { background: #f4f4f4; padding: 0.5em; border-left: 3px solid #888; }
+  .banner { background: #ffe7c2; border: 1px solid #b87; padding: 0.7em; margin-bottom: 1em; }
+</style>
+</head>
+<body>
+<div class="banner">
+  <strong>AUTHORIZED USE ONLY.</strong>
+  This is the C6 Week 8 deliberately-vulnerable lab. It runs on 127.0.0.1 only.
+  Do not deploy or expose this application outside your own loopback.
+</div>
+<nav>
+  <a href="{{ url_for('index') }}">Home</a>
+  <a href="{{ url_for('login') }}">Login</a>
+  <a href="{{ url_for('search') }}">Search</a>
+  <a href="{{ url_for('comments') }}">Comments</a>
+  <a href="{{ url_for('lookup') }}">Lookup</a>
+  <a href="{{ url_for('admin_users') }}">Admin</a>
+</nav>
+<hr>
+{% block body %}{% endblock %}
+</body>
+</html>

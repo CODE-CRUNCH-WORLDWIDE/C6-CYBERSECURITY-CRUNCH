@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}vuln_lab - search{% endblock %}
+{% block body %}
+<h1>Search</h1>
+<form method="get">
+  <p><label>Query <input name="q" type="text" value=""></label>
+     <button type="submit">Search</button></p>
+</form>
+{# Vulnerability (A03, CWE-79 reflected): q is wrapped in Markup() in the view,
+   which bypasses Jinja autoescape. #}
+<p>You searched for: {{ q }}</p>
+<p>Results: {{ results|length }} (this is a stub; no actual results in the lab).</p>
+{% endblock %}

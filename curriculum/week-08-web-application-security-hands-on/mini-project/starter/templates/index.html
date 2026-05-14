@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}vuln_lab - home{% endblock %}
+{% block body %}
+<h1>vuln_lab</h1>
+{% if user %}
+  <p>Logged in as <strong>{{ user.username }}</strong> ({{ user.role }}).
+     <a href="{{ url_for('logout') }}">Log out</a>.</p>
+  <p><a href="{{ url_for('profile', id=user.id) }}">Your profile</a></p>
+{% else %}
+  <p>Not logged in. <a href="{{ url_for('login') }}">Log in</a> to access user-specific pages.</p>
+{% endif %}
+<p>This is the C6 Week 8 hands-on lab. Eight intentional vulnerabilities live behind the navigation links. See the week's lecture notes for the exploit walkthrough and patch sequence.</p>
+{% endblock %}
